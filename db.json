@@ -1,0 +1,14 @@
+{
+    "journals":[
+        {
+            "id":1,
+            "entry": "Bacon ipsum dolor amet leberkas ribeye pork, turkey capicola prosciutto salami brisket. Swine boudin short ribs t-bone porchetta meatball turkey ham shankle leberkas andouille pancetta. Jerky prosciutto tongue pork loin tail flank leberkas pig bresaola biltong buffalo swine pancetta sausage meatloaf. Short loin pig jowl pork belly tongue turducken corned beef kielbasa buffalo. Cupim drumstick salami chislic. Chislic cow strip steak filet mignon tenderloin, beef ham hock. Pancetta jowl tri-tip, picanha spare ribs short ribs frankfurter ribeye porchetta.",
+            "date": 1632185095213
+        },
+        {
+            "id":2,
+            "entry": "Ball tip pastrami fatback, cow jowl short ribs t-bone ham picanha flank. Chuck turkey strip steak pork chop pancetta pork. Shoulder doner short loin, picanha filet mignon beef ribs biltong chuck pastrami meatball ribeye tri-tip buffalo flank. Porchetta frankfurter chuck, rump buffalo ribeye swine fatback cow chicken doner leberkas turkey pork chop. Brisket meatball tenderloin buffalo kevin porchetta.",
+            "date": 1632485096218
+        }
+    ]
+}
