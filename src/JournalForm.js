@@ -22,6 +22,7 @@ function JournalForm({journals, updateJournals}){
             updateJournals(sortedJournals)
         })
     }
+    
     return (
         <div>
             <form onSubmit={submitEntry}>
