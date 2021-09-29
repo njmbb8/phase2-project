@@ -24,12 +24,12 @@ function NavBar(){
                 Home
             </NavLink>
             <NavLink
-                to="/Journal"
+                to="/journals"
                 exact
                 style={linkStyles}
                 activeStyle={{ background: "darkblue" }}
             >
-                Journal
+                Journals
             </NavLink>
             <NavLink
                 to="/new_entry"

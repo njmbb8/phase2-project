@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  width: 50%;
+  margin:auto;
 }
 
 .App-logo {
@@ -26,6 +28,30 @@
 
 .App-link {
   color: #61dafb;
+}
+
+#journalBrowser {
+  display: grid;
+  grid-template-columns: 25% 50%;
+}
+
+#journalList {
+  overflow-y: scroll;
+  border: black solid 1px;
+  height: 50vh;
+}
+
+#journalList :nth-child(2n){
+  background-color: lightgray;
+}
+
+#journalEntry {
+  overflow-y:scroll;
+  max-height: 50vh;
+}
+
+p{
+  white-space: pre-line;
 }
 
 @keyframes App-logo-spin {
