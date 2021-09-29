@@ -16,7 +16,11 @@ function JournalForm({journals, updateJournals}){
             },
             body: JSON.stringify(journalEntry)
         })
-        .then((ret) => updateJournals([...journals, ret.json()]))
+        .then((data) => data.json())
+        .then((ret)=> {
+            const sortedJournals = [...journals, ret].sort((a, b) => b.date - a.date)
+            updateJournals(sortedJournals)
+        })
     }
     return (
         <div>
