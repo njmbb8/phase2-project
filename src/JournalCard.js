@@ -21,7 +21,6 @@ function JournalCard({journal, journals}){
 
     const displayJournal = selectJournal()
     const journalDate = new Date(parseInt(displayJournal.date))
-    console.log(journals)
 
     return(
         <div className = "journalCard">

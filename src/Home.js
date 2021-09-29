@@ -1,12 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import JournalCard from "./JournalCard";
 
-function Home({journals, activeJournal, setActiveJournal}){
+function Home({journals}){
+
+    const [activeJournal, setActiveJournal] = useState(journals[Math.floor(Math.random() * journals.length)])
+
     function setRandomJournal(){
         setActiveJournal(journals[Math.floor(Math.random() * journals.length)])
     }
-
-    setRandomJournal()
 
     return (
         <div id="Home">

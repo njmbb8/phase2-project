@@ -1,7 +1,7 @@
 import React from "react";
 import Timecard from "./Timecard";
 import JournalCard from "./JournalCard";
-import { Route, useRouteMatch, useParams } from "react-router";
+import { Route, useRouteMatch } from "react-router";
 
 function JournalBrowser({journals}){
 

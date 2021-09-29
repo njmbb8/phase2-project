@@ -20,9 +20,10 @@ function JournalForm({journals, updateJournals}){
         .then((ret)=> {
             const sortedJournals = [...journals, ret].sort((a, b) => b.date - a.date)
             updateJournals(sortedJournals)
+            event.target.childNodes[0].value = ''
         })
     }
-    
+
     return (
         <div>
             <form onSubmit={submitEntry}>
