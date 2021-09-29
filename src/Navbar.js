@@ -32,12 +32,12 @@ function NavBar(){
                 Journals
             </NavLink>
             <NavLink
-                to="/new_entry"
+                to="/newJournal"
                 exact
                 style={linkStyles}
                 activeStyle={{ background: "darkblue" }}
             >
-                New Journal Entry
+                New Journal
             </NavLink>
         </div>
     )

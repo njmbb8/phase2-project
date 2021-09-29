@@ -4,7 +4,6 @@ import { useParams, useRouteMatch } from "react-router";
 function JournalCard({journal, journals}){
     const params = useParams();
     const match = useRouteMatch();
-    console.log(params)
 
     function selectJournal(){
         if(match.url === '/'){

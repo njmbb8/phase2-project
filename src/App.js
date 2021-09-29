@@ -5,6 +5,7 @@ import NavBar from './Navbar';
 import Home from './Home';
 import { useState, useEffect } from 'react'
 import JournalBrowser from './JournalBrowser';
+import JournalForm from './JournalForm';
 
 function App() {
 
@@ -38,6 +39,9 @@ function App() {
             activeJournal = {activeJournal} 
             setActiveJournal = {setActiveJournal}
             />
+        </Route>
+        <Route path = '/newJournal'>
+          <JournalForm journals={journals} updateJournals={setJournals}/>
         </Route>
       </Switch> 
       :
