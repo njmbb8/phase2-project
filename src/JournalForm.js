@@ -1,9 +1,10 @@
 import React from "react";
 
-function JournalForm({journals, updateJournals}){
+function JournalForm({journals, dispatch}){
 
     function submitEntry(event){
         event.preventDefault()
+        dispatch({type: "Loading Data"})
         const now = new Date()
         const journalEntry = {
             date: now.getTime(),
@@ -19,9 +20,10 @@ function JournalForm({journals, updateJournals}){
         .then((data) => data.json())
         .then((ret)=> {
             const sortedJournals = [...journals, ret].sort((a, b) => b.date - a.date)
-            updateJournals(sortedJournals)
+            dispatch({type: "Loaded Data", payload: sortedJournals})
             event.target.childNodes[0].value = ''
         })
+        .catch((error) => dispatch({type: "Error Loading", payload: error}))
     }
 
     return (

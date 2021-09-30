@@ -2,16 +2,49 @@ import './App.css';
 import { Route, Switch } from "react-router-dom";
 import NavBar from './Navbar';
 import Home from './Home';
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useReducer } from 'react'
 import JournalBrowser from './JournalBrowser';
 import JournalForm from './JournalForm';
 
 function App() {
+  function reducer(state, action){
+    if(action.type === "Loading Data"){
+      return {
+        hasLoaded: false,
+        journals: [],
+        message: 'Loading...'
+      }
 
-  const [hasLoaded, setHasLoaded] = useState(false)
-  const [journals, setJournals] = useState([])
+    }
+    else if(action.type === "Loaded Data"){
+      return{
+        hasLoaded: true,
+        journals: action.payload,
+        message: ''
+      }
+    }
+    else if(action.type === "Error Loading"){
+      return {
+        hasLoaded: false,
+        journals: [],
+        message: `${action.payload.name}: ${action.payload.message}`
+      }
+    }
+    else{
+      return state
+    }
+  }
+
+  const [state, dispatch] = useReducer(reducer, {
+    hasLoaded: false,
+    journals: [],
+    message: ''
+  })
+
+  const {hasLoaded, journals, message} = state
 
   useEffect(() => {
+    dispatch({type: "Loading Data"})
     fetch("http://localhost:4000/journals")
     .then((data) => data.json())
     .then((journals) => {
@@ -19,8 +52,10 @@ function App() {
       return orderedJournals
     })
     .then((ret) => {
-      setJournals(ret)
-      setHasLoaded(true)
+      dispatch({type: "Loaded Data", payload: ret})
+    })
+    .catch((error)=>{
+      dispatch({type: "Error Loading", payload: error})
     })
   }, [])
 
@@ -35,11 +70,11 @@ function App() {
           <JournalBrowser journals = {journals} />
         </Route>
         <Route path = '/newJournal'>
-          <JournalForm journals={journals} updateJournals={setJournals}/>
+          <JournalForm journals={journals} dispatch={dispatch}/>
         </Route>
       </Switch> 
       :
-      <h1>Loading...</h1>}
+      <h1>{message}</h1>}
     </div>
   );
 }
