@@ -1,6 +1,9 @@
 import React from "react";
+import { useHistory } from "react-router";
 
 function JournalForm({journals, dispatch}){
+
+    const history = useHistory();
 
     function submitEntry(event){
         event.preventDefault()
@@ -22,6 +25,7 @@ function JournalForm({journals, dispatch}){
             const sortedJournals = [...journals, ret].sort((a, b) => b.date - a.date)
             dispatch({type: "Loaded Data", payload: sortedJournals})
             event.target.childNodes[0].value = ''
+            history.push("/journals")
         })
         .catch((error) => dispatch({type: "Error Loading", payload: error}))
     }

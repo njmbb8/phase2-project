@@ -334,6 +334,11 @@
       "date": 1632957297803,
       "entry": "this is a benchmark",
       "id": 70
+    },
+    {
+      "date": 1633143980048,
+      "entry": "does it work?",
+      "id": 71
     }
   ]
 }
