@@ -2,7 +2,7 @@ import './App.css';
 import { Route, Switch } from "react-router-dom";
 import NavBar from './Navbar';
 import Home from './Home';
-import { useState, useEffect, useReducer } from 'react'
+import { useEffect, useReducer } from 'react'
 import JournalBrowser from './JournalBrowser';
 import JournalForm from './JournalForm';
 

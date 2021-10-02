@@ -1,11 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-function Timecard({updateJournal, journal}){
+function Timecard({journal, activeID}){
     const journalDate = new Date(parseInt(journal.date))
+    const style = activeID === journal.id ? {"background-color": "blue"} : {}
     return (
-        <div onClick = {updateJournal} id = {journal.id}>
-            <Link key = {journal.id} to = {`/journals/${journal.id}`}>
+        <div id = {journal.id} style = {style}>
+            <Link to = {`/journals/${journal.id}`}>
                 {`${journalDate.toDateString()}\n${journalDate.toLocaleTimeString()}`}
             </Link>
         </div>

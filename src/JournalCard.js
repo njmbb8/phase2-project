@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, useRouteMatch } from "react-router";
 
-function JournalCard({journal, journals}){
+function JournalCard({journal, journals, setActiveID}){
     const params = useParams();
     const match = useRouteMatch();
 
@@ -20,6 +20,7 @@ function JournalCard({journal, journals}){
     }
 
     const displayJournal = selectJournal()
+    setActiveID(displayJournal.id)
     const journalDate = new Date(parseInt(displayJournal.date))
 
     return(
